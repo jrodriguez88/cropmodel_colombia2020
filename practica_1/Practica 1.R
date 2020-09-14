@@ -38,10 +38,10 @@ fecha_inicial <- 19880101
 fecha_final <- 20191231
 
 #Localidad
-localidad <- "jalapa"
-latitud <- 13.9
-longitud <- -86.0
-altitud <- 677
+localidad <- "ventaquemada"
+latitud <- 5.44
+longitud <- -73.50
+altitud <- 2700
 
 #Directorios de trabajo
 directorio <- paste0(getwd(), "/practica_1/")
@@ -54,8 +54,8 @@ variables_clima <- c("PRECTOT", "ALLSKY_SFC_SW_DWN","RH2M", "T2M_MAX", "T2M_MIN"
 
 #https://www.isric.org/explore/soilgrids/faq-soilgrids
 #Densidad Aparente, %Arcillas, %Arenas, %Grava, Carbono Organico, (Contenido agua a marchitez, Capacidad de campo, Saturacion) 
-variables_suelo <- c("BLDFIE","CLYPPT","SNDPPT","CRFVOL","ORCDRC","WWP","AWCh1","AWCtS")
-profundidades <- c("sl1", "sl2", "sl3", "sl4", "sl5")  # 60cm
+#variables_suelo <- c("BLDFIE","CLYPPT","SNDPPT","CRFVOL","ORCDRC","WWP","AWCh1","AWCtS")
+#profundidades <- c("sl1", "sl2", "sl3", "sl4", "sl5")  # 60cm
 
   
 #################################################
@@ -63,7 +63,7 @@ profundidades <- c("sl1", "sl2", "sl3", "sl4", "sl5")  # 60cm
 #################################################
 
 datos_clima_crudos <- get_data_nasapower(variables_clima, fecha_inicial, fecha_final, latitud, longitud)
-datos_suelo_crudos <- get_data_soilgrids(variables_suelo, latitud, longitud, profundidades)
+#datos_suelo_crudos <- get_data_soilgrids(variables_suelo, latitud, longitud, profundidades)
 
 #################################################
 ### 4. Explorar y Organizar data
@@ -71,7 +71,7 @@ datos_suelo_crudos <- get_data_soilgrids(variables_suelo, latitud, longitud, pro
 
 #Analisis exploratorio con skimr
 skim(datos_clima_crudos)
-skim(datos_suelo_crudos)
+#skim(datos_suelo_crudos)
 
 #Cambiar identificador NA
 datos_clima_crudos <- datos_clima_crudos %>% replace_with_na_all(condition = ~.x == -99)
@@ -89,7 +89,7 @@ datos_clima <- datos_clima_crudos %>%
   dplyr::select(-extraT) %>% basic_qc_nasa
   
 
-datos_suelo <- from_soilgrids_to_aquacrop(localidad, datos_suelo_crudos)
+datos_suelo <- read_csv("practica_1/data/datos_suelo.csv")
 
 #Graficar clima
 datos_clima %>%  
@@ -116,7 +116,7 @@ datos_clima %>%
 #################################################
 
 make_weather_aquacrop(directorio_resultados, localidad, datos_clima, latitud, altitud)
-make_soil_aquacrop(directorio_resultados, localidad, datos_suelo$data, datos_suelo$CN, datos_suelo$REW)
+make_soil_aquacrop(directorio_resultados, localidad, datos_suelo, 75, 11)
 
 
 #################################################
@@ -124,7 +124,7 @@ make_soil_aquacrop(directorio_resultados, localidad, datos_suelo$data, datos_sue
 #################################################
 
 write_csv(datos_clima, paste0(directorio_resultados, localidad, "_clima.csv"))
-write_csv(datos_suelo$data, paste0(directorio_resultados, localidad, "_suelo.csv"))
+#write_csv(datos_suelo$data, paste0(directorio_resultados, localidad, "_suelo.csv"))
 
 
 
