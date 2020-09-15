@@ -13,8 +13,8 @@ library(lubridate)
 directorio <- paste0(getwd(), "/practica_2/") 
 directorio_resultados <- paste0(directorio, "/data/")
 crop_file <- list.files(directorio_resultados, pattern = ".CRO", full.names = T)
-crop_duration <- 140         # duracion promedio segun criterio del investigador
-sowing_month <- c(2,3)
+crop_duration <- 130        # duracion promedio segun criterio del investigador
+sowing_month <- c(2,3,4)
 
 
 #### Leer datos de clima
@@ -22,7 +22,7 @@ sowing_month <- c(2,3)
 data <- read_csv(paste0(directorio_resultados, "datos_clima.csv"))
 
 ## function to calculate HUH (growing thermal units) _ tbase, topt,and thigh depends of crop
-HUH_cal <- function(tmax, tmin, tbase = 8, topt = 30, thigh = 42.5) {
+HUH_cal <- function(tmax, tmin, tbase = 5, topt = 20, thigh = 30) {
   
   tav <- (tmin + tmax)/2
   

@@ -3,11 +3,11 @@ test course boyaca
      1         : File not protected
      3         : root/tuber crop
      1         : Crop is sown
-     1         : Determination of crop cycle : by calendar days
+     0         : Determination of crop cycle : by growing degree-days
      1         : Soil water depletion factors (p) are adjusted by ETo
      5.0       : Base temperature (°C) below which crop development does not progress
     30.0       : Upper temperature (°C) above which crop development no longer increases with an increase in temperature
-    -9         : Total length of crop cycle in growing degree-days
+  1509         : Total length of crop cycle in growing degree-days
      0.20      : Soil water depletion factor for canopy expansion (p-exp) - Upper threshold
      0.55      : Soil water depletion factor for canopy expansion (p-exp) - Lower threshold
      3.0       : Shape factor for water stress coefficient for canopy expansion (0.0 = straight line)
@@ -37,28 +37,28 @@ test course boyaca
      0.30      : Minimum effective rooting depth (m)
      1.50      : Maximum effective rooting depth (m)
     15         : Shape factor describing root zone expansion
-     0.051     : Maximum root water extraction (m3water/m3soil.day) in top quarter of root zone
-     0.013     : Maximum root water extraction (m3water/m3soil.day) in bottom quarter of root zone
+     0.048     : Maximum root water extraction (m3water/m3soil.day) in top quarter of root zone
+     0.012     : Maximum root water extraction (m3water/m3soil.day) in bottom quarter of root zone
     60         : Effect of canopy cover in reducing soil evaporation in late season stage
     15.00      : Soil surface covered by an individual seedling at 90 % emergence (cm2)
     15.00      : Canopy size of individual plant (re-growth) at 1st day (cm2)
     40000      : Number of plants per hectare
-     0.16094   : Canopy growth coefficient (CGC): Increase in canopy cover (fraction soil cover per day)
+     0.16259   : Canopy growth coefficient (CGC): Increase in canopy cover (fraction soil cover per day)
     -9         : Maximum decrease of Canopy Growth Coefficient in and between seasons - Not Applicable
     -9         : Number of seasons at which maximum decrease of Canopy Growth Coefficient is reached - Not Applicable
     -9.0       : Shape factor for decrease Canopy Growth Coefficient - Not Applicable
      1.00      : Maximum canopy cover (CCx) in fraction soil cover
      0.20053   : Canopy decline coefficient (CDC): Decrease in canopy cover (in fraction per day)
     20         : Calendar Days: from sowing to emergence
-   100         : Calendar Days: from sowing to maximum rooting depth
+    99         : Calendar Days: from sowing to maximum rooting depth
    110         : Calendar Days: from sowing to start senescence
-   130         : Calendar Days: from sowing to maturity (length of crop cycle)
-    50         : Calendar Days: from sowing to start of yield formation
+   133         : Calendar Days: from sowing to maturity (length of crop cycle)
+    48         : Calendar Days: from sowing to start of yield formation
      0         : Length of the flowering stage (days)
      0         : Crop determinancy unlinked with flowering
     -9         : Excess of potential fruits - Not Applicable
-    80         : Building up of Harvest Index starting at root/tuber enlargement (days)
-    18.0       : Water Productivity normalized for ETo and CO2 (WP*) (gram/m2)
+    84         : Building up of Harvest Index starting at root/tuber enlargement (days)
+    19.0       : Water Productivity normalized for ETo and CO2 (WP*) (gram/m2)
    100         : Water Productivity normalized for ETo and CO2 during yield formation (as % WP*)
     50         : Crop performance under elevated atmospheric CO2 concentration (%)
     75         : Reference Harvest Index (HIo) (%)
@@ -66,12 +66,12 @@ test course boyaca
     -9.0       : No impact on HI of restricted vegetative growth during yield formation 
     10.0       : Coefficient describing negative impact on HI of stomatal closure during yield formation
      5         : Allowable maximum increase (%) of specified HI
-    -9         : GDDays: from sowing to emergence
-    -9         : GDDays: from sowing to maximum rooting depth
-    -9         : GDDays: from sowing to start senescence
-    -9         : GDDays: from sowing to maturity (length of crop cycle)
-    -9         : GDDays: from sowing to start tuber formation
-    -9         : Length of the flowering stage (growing degree days)
-    -9.000000  : CGC for GGDays: Increase in canopy cover (in fraction soil cover per growing-degree day)
-    -9.000000  : CDC for GGDays: Decrease in canopy cover (in fraction per growing-degree day)
-    -9         : GDDays: building-up of Harvest Index during yield formation
+   232         : GDDays: from sowing to emergence
+  1166         : GDDays: from sowing to maximum rooting depth
+  1277         : GDDays: from sowing to start senescence
+  1509         : GDDays: from sowing to maturity (length of crop cycle)
+   578         : GDDays: from sowing to start tuber formation
+     0         : Length of the flowering stage (growing degree days)
+     0.013407  : CGC for GGDays: Increase in canopy cover (in fraction soil cover per growing-degree day)
+     0.018683  : CDC for GGDays: Decrease in canopy cover (in fraction per growing-degree day)
+   929         : GDDays: building-up of Harvest Index during yield formation
