@@ -14,7 +14,7 @@ directorio <- paste0(getwd(), "/practica_2/")
 directorio_resultados <- paste0(directorio, "/data/")
 crop_file <- list.files(directorio_resultados, pattern = ".CRO", full.names = T)
 crop_duration <- 130        # duracion promedio segun criterio del investigador
-sowing_month <- c(2,3,4)
+sowing_month <- c(2, 3 , 4, 7, 8, 9)
 
 
 #### Leer datos de clima
@@ -64,7 +64,14 @@ get_param_gdd <- function(data , cropfile, sowing_dates) {
 }
 
 
-get_param_gdd(data, crop_file, sowing_dates)
+get_param_gdd(data, crop_file, sowing_month)
+
+## Referencia 
+# 150 dias - zona Cundinamarca
+# 2100 GDD
+# 
+
+
 
 
 
