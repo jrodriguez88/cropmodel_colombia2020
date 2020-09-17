@@ -9,10 +9,12 @@ library(tidyverse)
 library(data.table)
 library(lubridate)
 library(skimr)
+library(jsonlite)
 source("https://raw.githubusercontent.com/jrodriguez88/aquacrop-R/master/make_weather_aquacrop.R", encoding = "UTF-8")
+source("https://raw.githubusercontent.com/jrodriguez88/csmt/master/get_data/get_data_nasapower.R", encoding = "UTF-8")
 
 #Localidad
-localidad <- "toca_24035040"
+localidad <- "toca24035040"
 latitud <- 5.579444444
 longitud <- -73.20794444
 altitud <- 2700
